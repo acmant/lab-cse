@@ -150,6 +150,7 @@ inode_manager::free_inode(uint32_t inum)
   if(ino->type != 0)
   {
 	  ino->type = 0;
+	  inode_use[inum] = 0;
   	  put_inode(inum,ino);
   }
   free(ino);
